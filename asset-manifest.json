@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/quarantine-traveler/static/css/main.55d7473f.chunk.css",
-    "main.js": "/quarantine-traveler/static/js/main.91f0f9cf.chunk.js",
-    "main.js.map": "/quarantine-traveler/static/js/main.91f0f9cf.chunk.js.map",
+    "main.js": "/quarantine-traveler/static/js/main.ee8ba220.chunk.js",
+    "main.js.map": "/quarantine-traveler/static/js/main.ee8ba220.chunk.js.map",
     "runtime-main.js": "/quarantine-traveler/static/js/runtime-main.6a6a296f.js",
     "runtime-main.js.map": "/quarantine-traveler/static/js/runtime-main.6a6a296f.js.map",
     "static/js/2.73762bc7.chunk.js": "/quarantine-traveler/static/js/2.73762bc7.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.6a6a296f.js",
     "static/js/2.73762bc7.chunk.js",
     "static/css/main.55d7473f.chunk.css",
-    "static/js/main.91f0f9cf.chunk.js"
+    "static/js/main.ee8ba220.chunk.js"
   ]
 }
