@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "https://vikingfalk.github.io/quarantine-traveler/static/css/main.e6cb5556.chunk.css",
+    "main.js": "https://vikingfalk.github.io/quarantine-traveler/static/js/main.eac09297.chunk.js",
+    "main.js.map": "https://vikingfalk.github.io/quarantine-traveler/static/js/main.eac09297.chunk.js.map",
+    "runtime-main.js": "https://vikingfalk.github.io/quarantine-traveler/static/js/runtime-main.07a43cb7.js",
+    "runtime-main.js.map": "https://vikingfalk.github.io/quarantine-traveler/static/js/runtime-main.07a43cb7.js.map",
+    "static/js/2.2daffa3a.chunk.js": "https://vikingfalk.github.io/quarantine-traveler/static/js/2.2daffa3a.chunk.js",
+    "static/js/2.2daffa3a.chunk.js.map": "https://vikingfalk.github.io/quarantine-traveler/static/js/2.2daffa3a.chunk.js.map",
+    "static/js/3.7c0037ca.chunk.js": "https://vikingfalk.github.io/quarantine-traveler/static/js/3.7c0037ca.chunk.js",
+    "static/js/3.7c0037ca.chunk.js.map": "https://vikingfalk.github.io/quarantine-traveler/static/js/3.7c0037ca.chunk.js.map",
+    "index.html": "https://vikingfalk.github.io/quarantine-traveler/index.html",
+    "static/css/main.e6cb5556.chunk.css.map": "https://vikingfalk.github.io/quarantine-traveler/static/css/main.e6cb5556.chunk.css.map",
+    "static/js/2.2daffa3a.chunk.js.LICENSE.txt": "https://vikingfalk.github.io/quarantine-traveler/static/js/2.2daffa3a.chunk.js.LICENSE.txt",
+    "static/media/airplane.08eb947d.png": "https://vikingfalk.github.io/quarantine-traveler/static/media/airplane.08eb947d.png",
+    "static/media/traveller.335e8bd8.png": "https://vikingfalk.github.io/quarantine-traveler/static/media/traveller.335e8bd8.png",
+    "static/media/worldwide.835418a6.png": "https://vikingfalk.github.io/quarantine-traveler/static/media/worldwide.835418a6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.07a43cb7.js",
+    "static/js/2.2daffa3a.chunk.js",
+    "static/css/main.e6cb5556.chunk.css",
+    "static/js/main.eac09297.chunk.js"
+  ]
+}
