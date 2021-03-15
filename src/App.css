@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Mukta', sans-serif;
+  line-height: 1em;
+  color: rgb(30, 30, 30);
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.board__column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.board__column--left {
+  justify-self: right;
+}
+
+.board__column--right {
+  justify-self: left;
+}
+
+.btn-home {
+  position: fixed;
+  display: flex;
+  top: 0.8rem;
+  left: 3rem;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.btn-home__icon {
+  transform: rotate(180deg);
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+  margin-top: 2rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+}
+
+.container--column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(100, 100, 100, 0.2);
+  padding: 0.5rem 3rem;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  font-size: 1.4rem;
+}
+
+.img-traveller {
+  position: fixed;
+  bottom: -7rem;
+  left: -6rem;
+  z-index: -10;
+}
+
+.img-world {
+  position: fixed;
+  bottom: -12rem;
+  right: -8rem;
+  z-index: -12;
+}
+
+.img-plane {
+  position: fixed;
+  transform: scaleX(-1) rotate(-15deg);
+  bottom: 10rem;
+  right: -14rem;
+  z-index: -11;
+}
+
+.main-heading {
+  position: fixed;
+  top: 0;
+  font-size: 4rem;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+  border: 3px solid black;
+  border-top: none;
+  background-color: rgb(250, 250, 250);
+}
+
+.matched,
+.failed {
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  text-shadow: 0 0 7px rgb(0, 0, 0);
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.matched {
+  color: rgb(82, 235, 123);
+}
+
+.failed  {
+  color: rgb(236, 81, 81);
+}
+
+.sub-heading {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.tips {
+  position: fixed;
+  top: 1rem;
+  right: 15rem;
+}
+
+.wrapper-fixed {
+  position: fixed;
+  bottom: 1.5rem;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0%}
+  30% {opacity: 100%}
+  70% {opacity: 100%}
+  100% {opacity: 0%}
+}
