@@ -3,6 +3,7 @@ import ButtonEl from '../styledElements/Button';
 import traveller from '../assets/traveller.png';
 import world from '../assets/worldwide.png';
 import plane from '../assets/airplane.png';
+import './Home.css';
 
 const Home = () => (
   <div className="container container--column-center">

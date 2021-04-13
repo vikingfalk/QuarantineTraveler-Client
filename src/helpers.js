@@ -5,7 +5,6 @@ export const mapPictureCards = countriesData => countriesData.map(country => ({
   type: 'picture',
   country: country.name,
   pictureURL: country.pictureURL,
-  selected: false,
 }));
 
 export const mapFlagCards = countriesData => countriesData.map(country => ({
@@ -13,5 +12,6 @@ export const mapFlagCards = countriesData => countriesData.map(country => ({
   type: 'flag',
   country: country.name,
   flagURL: `./assets/flags/${country.name}.png`,
-  selected: false,
 }));
+
+export const shuffleArray = array => array.sort(() => 0.5 - Math.random());

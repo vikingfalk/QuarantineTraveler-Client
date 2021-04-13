@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Board from '../components/Board';
 import ButtonEl from '../styledElements/Button';
+import './Game.css';
 
 const Game = () => {
   const [tries, setTries] = useState(0);
@@ -9,25 +10,20 @@ const Game = () => {
   const [matched, setMatched] = useState(false);
   const [failed, setFailed] = useState(false);
   const history = useHistory();
-  const triesRef = useRef(tries);
 
   const incrementTries = () => {
-    setTries(triesRef.current + 1);
+    setTries(tries + 1);
   };
 
   const onMatched = bool => {
     if (bool) {
       setMatched(true);
-      setTimeout(() => setMatched(false), 2500);
+      setTimeout(() => setMatched(false), 1000);
       return;
     }
     setFailed(true);
-    setTimeout(() => setFailed(false), 2500);
+    setTimeout(() => setFailed(false), 1000);
   };
-
-  useEffect(() => {
-    triesRef.current = tries;
-  }, [tries]);
 
   if (finished) {
     return (
@@ -52,7 +48,6 @@ const Game = () => {
         </span>
       </Link>
       <h1 className="counter">{tries} 차례 시도</h1>
-      <p className="tips">Tips: Use the spacebar to match</p>
       {matched && <p className="matched">잘 하셨어요!</p>}
       {failed && <p className="failed">다시 한 번 해 보세요!</p>}
       <Board incrementTries={incrementTries} setFinished={setFinished} onMatched={onMatched} />
