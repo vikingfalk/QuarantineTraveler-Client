@@ -5,7 +5,6 @@ export default styled.article`
   width: 100%;
   overflow: hidden;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
   position: relative;
 
   & > img {
@@ -19,5 +18,13 @@ export default styled.article`
     color: pink;
     background-color: black;
     font-size: 2rem;
+    right: 0;
+    bottom: 0;
+  }
+
+  @media (min-width: 480px) {
+    & {
+      border-radius: 5px;
+    }
   }
 `;

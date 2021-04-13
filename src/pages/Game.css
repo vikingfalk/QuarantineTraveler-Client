@@ -26,10 +26,13 @@
   position: fixed;
   display: flex;
   left: 1rem;
-  top: 0.1rem;
+  left: 0;
+  top: 0;
   align-items: center;
   font-size: 1rem;
   z-index: 1000;
+  background-color: rgba(220, 220, 220, 0.8);
+  border-radius: 0 0 5px 0;
 }
 
 .btn-home__icon {
@@ -44,19 +47,22 @@
 
 .buttons-wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 330px;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.buttons-wrapper > button:first-of-type {
+  margin-bottom: 1rem;
 }
 
 .counter {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(200, 200, 200, 0.9);
-  padding: 0.3rem 1.5rem;
-  border-radius: 0 0 5px 5px;
+  right: 0;
+  background-color: rgba(220, 220, 220, 0.8);
+  padding: 0.3rem 1rem;
+  border-radius: 0 0 0 5px;
   overflow: hidden;
   font-size: 1.4rem;
   white-space: nowrap;
@@ -85,6 +91,12 @@
   color: rgb(236, 81, 81);
 }
 
+.finished-text {
+  width: 80%;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
 @keyframes fadeIn {
   0% {opacity: 0%}
   30% {opacity: 100%}
@@ -108,13 +120,27 @@
   .btn-home {
     top: 0.8rem;
     left: 3rem;
+    background-color: transparent;
   }
 
   .btn-home__text {
     display: initial;
   }
 
+  .buttons-wrapper {
+    flex-direction: row;
+  }
+
+  .buttons-wrapper > button:first-of-type {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
   .counter {
     padding: 0.5rem 3rem;
+    left: 50%;
+    right: initial;
+    transform: translateX(-50%);
+    border-radius: 0 0 5px 5px;
   }
 }

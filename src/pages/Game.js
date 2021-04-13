@@ -28,12 +28,12 @@ const Game = () => {
   if (finished) {
     return (
       <div className="container container--column-center">
-        <h1>잘 하셨습니다! {tries} 차례 시도하고 게임 성공하셨습니다!</h1>
+        <h1 className="finished-text">잘 하셨습니다! {tries} 차례 시도하고 게임 성공하셨습니다!</h1>
         <section className="buttons-wrapper">
+          <ButtonEl onClick={() => history.go(0)} again>게임 또 하기</ButtonEl>
           <Link to="/">
             <ButtonEl>홈 페이지</ButtonEl>
           </Link>
-          <ButtonEl onClick={() => history.go(0)} again>게임 또 하기</ButtonEl>
         </section>
       </div>
     );

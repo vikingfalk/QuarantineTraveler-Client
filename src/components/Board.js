@@ -42,7 +42,6 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
           setError('Error loading game');
           return;
         }
-        console.log(data);
         const flags = data.flags.map(flagGroup => mapFlagCards([...shuffleArray(flagGroup)]));
         const pictures = mapPictureCards(data.pictures);
         setFlagCards(flags);
