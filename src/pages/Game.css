@@ -1,37 +1,45 @@
 .board {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: 6rem;
-  width: 80%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr;
+  width: 100%;
+  height: 100%;
   max-width: 1400px;
-  margin-bottom: 2rem;
+  align-content: center;
 }
 
 .board__column--picture {
-  align-self: center;
+  height: 100%;
 }
 
 .board__column--flags {
-  align-self: center;
+  align-content: center;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 30% 30% 30%;
-  gap: 1.5rem;
+  gap: 5%;
+  padding: 5%;
 }
 
 .btn-home {
   position: fixed;
   display: flex;
-  top: 0.8rem;
-  left: 3rem;
+  left: 1rem;
+  top: 0.1rem;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  z-index: 1000;
 }
 
 .btn-home__icon {
   transform: rotate(180deg);
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   margin-right: 0.2rem;
+}
+
+.btn-home__text {
+  display: none;
 }
 
 .buttons-wrapper {
@@ -46,11 +54,13 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(100, 100, 100, 0.2);
-  padding: 0.5rem 3rem;
+  background-color: rgba(200, 200, 200, 0.9);
+  padding: 0.3rem 1.5rem;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
   font-size: 1.4rem;
+  white-space: nowrap;
+  z-index: 1000;
 }
 
 .matched,
@@ -80,4 +90,31 @@
   30% {opacity: 100%}
   70% {opacity: 100%}
   100% {opacity: 0%}
+}
+
+@media (min-width: 480px) {
+  .board {
+    width: 80%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    margin-top: 0;
+    gap: 5%;
+  }
+
+  .board__column--flags {
+    grid-template-rows: 22% 22% 22%;
+  }
+
+  .btn-home {
+    top: 0.8rem;
+    left: 3rem;
+  }
+
+  .btn-home__text {
+    display: initial;
+  }
+
+  .counter {
+    padding: 0.5rem 3rem;
+  }
 }

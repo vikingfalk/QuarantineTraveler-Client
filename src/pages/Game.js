@@ -44,7 +44,7 @@ const Game = () => {
       <Link to="/">
         <span className="btn-home">
           <span className="material-icons btn-home__icon">exit_to_app</span>
-          돌아가기
+          <span className="btn-home__text">돌아가기</span>
         </span>
       </Link>
       <h1 className="counter">{tries} 차례 시도</h1>

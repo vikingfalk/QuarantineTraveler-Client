@@ -67,7 +67,6 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
     <section className="board">
       <section className="board__column board__column--picture">
         <PictureCard card={currentPicture} />
-        <p>{currentPicture.country}</p>
       </section>
       <section className="board__column board__column--flags">
         {flagCards && flagCards[flagCards.length - pictureCards.length].map(card => (
