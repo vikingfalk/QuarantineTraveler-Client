@@ -6,10 +6,12 @@ export default styled.article`
   overflow: hidden;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   position: relative;
+  height: calc(100vw * 0.7);
 
   & > img {
     display: block;
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -25,6 +27,7 @@ export default styled.article`
   @media (min-width: 480px) {
     & {
       border-radius: 5px;
+      height: calc(100vw * 0.35);
     }
   }
 `;
