@@ -17,7 +17,7 @@
 .img-plane {
   position: fixed;
   transform: scaleX(-1) rotate(-15deg) scale(0.3);
-  bottom: -9rem;
+  bottom: -12rem;
   right: -17rem;
   z-index: -11;
 }

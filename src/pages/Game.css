@@ -1,11 +1,12 @@
 .board {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr;
+  grid-template-rows: 45% 55%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 1400px;
   align-content: center;
+  overflow: hidden;
 }
 
 .board__column--picture {
