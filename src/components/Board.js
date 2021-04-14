@@ -17,6 +17,9 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
       onMatched(true);
     } else {
       onMatched(false);
+      const temp = flagCards;
+      temp[flagCards.length - pictureCards.length] = temp[flagCards.length - pictureCards.length]
+        .map(flagCard => (flagCard.id === flag.id ? { ...flagCard, tried: true } : flagCard));
     }
     incrementTries();
   };

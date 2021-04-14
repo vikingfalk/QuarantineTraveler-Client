@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export default styled.article`
   display: block;
+  position: relative;
   width: 100%;
   height: calc(100vw * 0.25);
   overflow: hidden;
@@ -9,15 +10,41 @@ export default styled.article`
   border-radius: 5px;
   cursor: pointer;
 
+  & > .country-name {
+    display: none;
+    position: absolute;
+    background-color: rgba(150, 150, 150, 0.5);
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+      color: white;
+      text-transform: capitalize;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+      font-size: 1.5rem;
+    }
+  }
+
   & > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
+  ${props => props.tried && css`
+    box-shadow: 0 0 2px 3px rgba(255, 40, 40, 0.8);
+    cursor: default;
+
+    & > .country-name {
+      display: flex;
+    }
+  `}
+
   @media (min-width: 480px) {
     &:hover {
-      ${props => !props.selected && css`
+      ${props => !props.tried && css`
         box-shadow: 0 0 6px 6px rgba(80, 255, 80, 0.6);
       `}
     }

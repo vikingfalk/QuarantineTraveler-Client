@@ -116,7 +116,7 @@
 
   .board__column--flags {
     grid-template-rows: 22% 22% 22%;
-    padding: 0;
+    padding: 1rem;
   }
 
   .btn-home {
