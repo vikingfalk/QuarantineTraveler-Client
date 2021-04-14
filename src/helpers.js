@@ -13,6 +13,7 @@ export const mapFlagCards = countriesData => countriesData.map(country => ({
   country: country.name,
   flagURL: `./assets/flags/${country.name}.png`,
   tried: false,
+  matched: false,
 }));
 
 export const shuffleArray = array => array.sort(() => 0.5 - Math.random());

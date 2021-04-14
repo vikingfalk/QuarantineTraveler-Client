@@ -6,29 +6,23 @@ import './Game.css';
 
 const Game = () => {
   const [tries, setTries] = useState(0);
+  const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [matched, setMatched] = useState(false);
-  const [failed, setFailed] = useState(false);
   const history = useHistory();
-
-  const incrementTries = () => {
-    setTries(tries + 1);
-  };
 
   const onMatched = bool => {
     if (bool) {
-      setMatched(true);
-      setTimeout(() => setMatched(false), 1000);
+      setScore(score + (6 - tries));
+      setTries(0);
       return;
     }
-    setFailed(true);
-    setTimeout(() => setFailed(false), 1000);
+    setTries(tries + 1);
   };
 
   if (finished) {
     return (
       <div className="container container--column-center">
-        <h1 className="finished-text">잘 하셨습니다! {tries} 차례 시도하고 게임 성공하셨습니다!</h1>
+        <h1 className="finished-text">잘 하셨습니다! 점수가 {score}점으로 게임을 성공하셨습니다!</h1>
         <section className="buttons-wrapper">
           <ButtonEl onClick={() => history.go(0)} again>게임 또 하기</ButtonEl>
           <Link to="/">
@@ -47,10 +41,8 @@ const Game = () => {
           <span className="btn-home__text">돌아가기</span>
         </span>
       </Link>
-      <h1 className="counter">{tries} 차례 시도</h1>
-      {matched && <p className="matched">잘 하셨어요!</p>}
-      {failed && <p className="failed">다시 한 번 해 보세요!</p>}
-      <Board incrementTries={incrementTries} setFinished={setFinished} onMatched={onMatched} />
+      <article className="counter">점수: <p className="score">{score}</p>점</article>
+      <Board setFinished={setFinished} onMatched={onMatched} />
     </div>
   );
 };

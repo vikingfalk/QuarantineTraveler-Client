@@ -3,25 +3,31 @@ import { mapFlagCards, mapPictureCards, shuffleArray } from '../helpers';
 import FlagCard from './FlagCard';
 import PictureCard from './PictureCard';
 
-const Board = ({ incrementTries, setFinished, onMatched }) => {
+const Board = ({ setFinished, onMatched }) => {
   const [flagCards, setFlagCards] = useState(null);
   const [pictureCards, setPictureCards] = useState(null);
   const [currentPicture, setCurrentPicture] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [roundOver, setRoundOver] = useState(false);
   const serverURL = process.env.NODE_ENV === 'production' ? 'https://quarantine-traveler.herokuapp.com' : 'http://localhost:8080';
 
   const checkMatch = flag => {
     if (flag.country === currentPicture.country) {
-      setPictureCards(pictureCards.filter((card, index) => index !== 0));
+      setRoundOver(true);
+      const temp = flagCards;
+      temp[flagCards.length - pictureCards.length] = temp[flagCards.length - pictureCards.length]
+        .map(flagCard => (flagCard.id === flag.id ? { ...flagCard, matched: true } : flagCard));
+      setFlagCards(temp);
+      setTimeout(() => setPictureCards(pictureCards.filter((card, index) => index !== 0)), 2000);
       onMatched(true);
     } else {
       onMatched(false);
       const temp = flagCards;
       temp[flagCards.length - pictureCards.length] = temp[flagCards.length - pictureCards.length]
         .map(flagCard => (flagCard.id === flag.id ? { ...flagCard, tried: true } : flagCard));
+      setFlagCards(temp);
     }
-    incrementTries();
   };
 
   useEffect(() => {
@@ -35,6 +41,7 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
     }
 
     setCurrentPicture(pictureCards[0]);
+    setRoundOver(false);
   }, [pictureCards]);
 
   useEffect(() => {
@@ -68,7 +75,7 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
   return (
     <section className="board">
       <section className="board__column board__column--picture">
-        <PictureCard card={currentPicture} />
+        <PictureCard card={currentPicture}/>
       </section>
       <section className="board__column board__column--flags">
         {flagCards && flagCards[flagCards.length - pictureCards.length].map(card => (
@@ -76,6 +83,11 @@ const Board = ({ incrementTries, setFinished, onMatched }) => {
             key={card.id}
             card={card}
             checkMatch={checkMatch}
+            scoreValue={
+              flagCards[flagCards.length - pictureCards.length]
+                .filter(flag => !flag.tried).length
+            }
+            roundOver={roundOver}
           />
         ))}
       </section>
