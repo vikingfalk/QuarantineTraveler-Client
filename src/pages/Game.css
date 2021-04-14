@@ -18,9 +18,9 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30% 30% 30%;
+  /* grid-template-rows: 30% 30% 30%; */
   gap: 5%;
-  padding: 5%;
+  padding: 10%;
 }
 
 .btn-home {
@@ -116,6 +116,7 @@
 
   .board__column--flags {
     grid-template-rows: 22% 22% 22%;
+    padding: 0;
   }
 
   .btn-home {
