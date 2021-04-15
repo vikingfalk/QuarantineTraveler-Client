@@ -75,7 +75,8 @@ const Board = ({ setFinished, onMatched }) => {
   return (
     <section className="board">
       <section className="board__column board__column--picture">
-        <PictureCard card={currentPicture}/>
+        <PictureCard card={pictureCards[1]} buffer/>
+        <PictureCard card={currentPicture} />
       </section>
       <section className="board__column board__column--flags">
         {flagCards && flagCards[flagCards.length - pictureCards.length].map(card => (

@@ -8,21 +8,32 @@ const Game = () => {
   const [tries, setTries] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  const SOUNDS = [
+    {
+      name: 'match',
+      file: new Audio('./assets/sound/match.wav'),
+    },
+    {
+      name: 'fail',
+      file: new Audio('./assets/sound/fail.wav'),
+    },
+  ];
   const history = useHistory();
 
   const playSound = file => {
-    const audio = new Audio(`./assets/sound/${file}.wav`);
+    const audio = SOUNDS.find(sound => sound.name === file).file;
+    audio.volume = 0.2;
     audio.play();
   };
 
   const onMatched = bool => {
     if (bool) {
-      playSound('match1');
+      playSound('match');
       setScore(score + (6 - tries));
       setTries(0);
       return;
     }
-    playSound('fail1');
+    playSound('fail');
     setTries(tries + 1);
   };
 

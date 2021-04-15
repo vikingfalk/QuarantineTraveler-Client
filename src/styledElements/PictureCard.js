@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.article`
   display: inline-block;
@@ -24,10 +24,17 @@ export default styled.article`
     bottom: 0;
   }
 
+  ${props => props.buffer && css`
+    & {
+      display: none;
+    }
+  `}
+
   @media (min-width: 480px) {
     & {
       border-radius: 5px;
       height: calc(100vw * 0.35);
+      max-height: calc(2500px * 0.35);
     }
   }
 `;

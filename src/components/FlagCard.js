@@ -4,7 +4,7 @@ const FlagCard = ({
   card, checkMatch, scoreValue, roundOver,
 }) => (
   <CardEl
-    onClick={!card.tried && !card.disabled ? () => checkMatch(card) : () => {}}
+    onClick={!card.tried && !roundOver ? () => checkMatch(card) : () => {}}
     tried={card.tried}
     matched={card.matched}
     disabled={roundOver}
