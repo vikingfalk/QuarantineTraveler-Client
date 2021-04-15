@@ -64,7 +64,7 @@ export default styled.article`
   `}
 
   ${props => props.matched && css`
-    box-shadow: 0 0 2px 3px rgba(40, 255, 40, 0.8);
+    box-shadow: 0 0 2px 4px rgba(40, 255, 40, 0.8);
 
     & > .country-name > p {
       display: block;

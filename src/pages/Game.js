@@ -10,12 +10,19 @@ const Game = () => {
   const [finished, setFinished] = useState(false);
   const history = useHistory();
 
+  const playSound = file => {
+    const audio = new Audio(`./assets/sound/${file}.wav`);
+    audio.play();
+  };
+
   const onMatched = bool => {
     if (bool) {
+      playSound('match1');
       setScore(score + (6 - tries));
       setTries(0);
       return;
     }
+    playSound('fail1');
     setTries(tries + 1);
   };
 
