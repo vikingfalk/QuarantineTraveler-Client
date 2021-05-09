@@ -18,7 +18,7 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=https://vikingfalk.github.io/QuarantineTraveler-Client react-scripts build",
+    "build": "set PUBLIC_URL=https://vikingfalk.github.io/QuarantineTraveler-Client&&react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
