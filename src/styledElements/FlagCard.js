@@ -40,6 +40,8 @@ export default styled.article`
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    user-select: none;
+    user-drag: none;
   }
 
   ${props => props.disabled && css`

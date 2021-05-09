@@ -44,7 +44,6 @@ export default styled.button`
   `}
 
   ${props => props.start && css`
-    padding: 1rem 3rem;
-    font-size: 1.8rem;
+    padding: 0.8rem 2.5rem;
   `}
 `;

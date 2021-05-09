@@ -1,3 +1,6 @@
 {
-  "extends": "salt"
+  "extends": "salt",
+  "rules": {
+    "linebreak-style": ["error", "windows"]
+  }
 }

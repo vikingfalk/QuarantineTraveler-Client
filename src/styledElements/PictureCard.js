@@ -13,6 +13,8 @@ export default styled.article`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    user-select: none;
+    user-drag: none;
   }
 
   .cheat-text {

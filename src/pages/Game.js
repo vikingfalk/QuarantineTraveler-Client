@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { LanguageContext } from '../context/LanguageContext';
 import Board from '../components/Board';
 import ButtonEl from '../styledElements/Button';
 import './Game.css';
 
 const Game = () => {
+  const { getTexts, language } = useContext(LanguageContext);
+  const [texts, setTexts] = useState({});
   const [tries, setTries] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -37,14 +40,22 @@ const Game = () => {
     setTries(tries + 1);
   };
 
+  useEffect(() => {
+    setTexts(getTexts().game);
+  }, [language]);
+
   if (finished) {
     return (
       <div className="container container--column-center">
-        <h1 className="finished-text">잘 하셨습니다! 점수가 {score}점으로 게임을 성공하셨습니다!</h1>
+        <h1 className="finished-text">
+          {texts.finishedTxt1} {score}{texts.finishedTxt2}
+        </h1>
         <section className="buttons-wrapper">
-          <ButtonEl onClick={() => history.go(0)} again>게임 또 하기</ButtonEl>
+          <ButtonEl onClick={() => history.go(0)} again>
+            {texts.finishedBtnAgain}
+          </ButtonEl>
           <Link to="/">
-            <ButtonEl>홈 페이지</ButtonEl>
+            <ButtonEl>{texts.finishedBtnHome}</ButtonEl>
           </Link>
         </section>
       </div>
@@ -56,10 +67,10 @@ const Game = () => {
       <Link to="/">
         <span className="btn-home">
           <span className="material-icons btn-home__icon">exit_to_app</span>
-          <span className="btn-home__text">돌아가기</span>
+          <span className="btn-home__text">{texts.btnHome}</span>
         </span>
       </Link>
-      <article className="counter">점수: <p className="score">{score}</p>점</article>
+      <article className="counter">{texts.counter}: <p className="score">{score}</p>{language === 'korean' && '점'}</article>
       <Board setFinished={setFinished} onMatched={onMatched} />
     </div>
   );
