@@ -10,5 +10,6 @@ export default {
     finishedTxt2: '점으로 게임을 성공하셨습니다!',
     finishedBtnAgain: '게임 또 하기',
     finishedBtnHome: '홈 페이지',
+    loading: '게임 로딩 중...',
   },
 };

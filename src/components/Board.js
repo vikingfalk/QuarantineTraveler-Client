@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { LanguageContext } from '../context/LanguageContext';
 import { mapFlagCards, mapPictureCards, shuffleArray } from '../helpers';
 import FlagCard from './FlagCard';
 import PictureCard from './PictureCard';
 
 const Board = ({ setFinished, onMatched }) => {
+  const { getTexts, language } = useContext(LanguageContext);
+  const [texts, setTexts] = useState({});
   const [flagCards, setFlagCards] = useState(null);
   const [pictureCards, setPictureCards] = useState(null);
   const [currentPicture, setCurrentPicture] = useState(null);
@@ -29,6 +32,10 @@ const Board = ({ setFinished, onMatched }) => {
       setFlagCards(temp);
     }
   };
+
+  useEffect(() => {
+    setTexts(getTexts().game);
+  }, [language]);
 
   useEffect(() => {
     if (!pictureCards) {
@@ -65,7 +72,7 @@ const Board = ({ setFinished, onMatched }) => {
   }
 
   if (loading) {
-    return <h2>게임 로딩 중...</h2>;
+    return <h2>{texts.loading}</h2>;
   }
 
   if (pictureCards.length === 0) {

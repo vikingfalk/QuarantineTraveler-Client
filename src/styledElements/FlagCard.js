@@ -9,6 +9,8 @@ export default styled.article`
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
+  user-drag: none;
 
   & > .country-name {
     display: none;
@@ -18,6 +20,8 @@ export default styled.article`
     width: 100%;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    user-drag: none;
 
     & > p {
       display: none;

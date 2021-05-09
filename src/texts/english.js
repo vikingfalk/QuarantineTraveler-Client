@@ -4,11 +4,12 @@ export default {
     startButton: 'Start',
   },
   game: {
-    btnHome: 'HOME',
+    btnHome: 'BACK',
     counter: 'SCORE',
     finishedTxt1: 'Good job! You finished with a score of',
     finishedTxt2: '!',
     finishedBtnAgain: 'Play again',
-    finishedBtnHome: 'Home',
+    finishedBtnHome: 'Home screen',
+    loading: 'Loading game...',
   },
 };
